@@ -39,7 +39,6 @@ public class Packet {
         if ((calculatedChecksum - this.checksum) == 0) {
             return this.utilData;
         }
-
         return new byte[1];
     }
 

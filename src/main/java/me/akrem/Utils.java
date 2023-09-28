@@ -31,7 +31,7 @@ public class Utils {
     }
 
     public static int putFloat(byte[] bytes, int offset, float f) {
-        return putInt(bytes, offset, Float.floatToRawIntBits(f));
+        return putInt(bytes, offset, Float.floatToIntBits(f));
     }
 
     public static int putInt(byte[] bytes, int offset, int val) {
@@ -53,7 +53,7 @@ public class Utils {
     }
 
 
-    public static byte[] dataSerializer(long cid, byte temperature, float longitude, float latitude, float timeframe) {
+    public static byte[] dataSerializer(long cid, byte temperature, float longitude, float latitude, long timeframe) {
 
         byte[] bytes = new byte[25];
         int offset = 0;
@@ -61,7 +61,7 @@ public class Utils {
         offset = putFloat(bytes, offset, longitude);
         offset = putFloat(bytes, offset, latitude);
         offset = putByte(bytes, offset, temperature);
-        putFloat(bytes, offset, timeframe);
+        putLong(bytes, offset, timeframe);
 
         return bytes;
     }

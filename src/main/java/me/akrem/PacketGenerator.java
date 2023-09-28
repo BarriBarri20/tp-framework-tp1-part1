@@ -13,7 +13,9 @@ class PacketGenerator {
 
             float longitude = rd.nextFloat();
             float latitude = rd.nextFloat();
-            long timeframe = rd.nextLong();
+            long leftLimit = 100L;
+            long rightLimit = 100000L;
+            long timeframe = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
             CardReader cardReaderInfos = new CardReader(temp[0], longitude, latitude, timeframe);
 
             Packet packet;
