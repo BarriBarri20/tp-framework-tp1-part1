@@ -1,25 +1,21 @@
 package me.akrem;
 
-import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class CardReader {
 
     public long cid;
+    public static long nextCid = 0L;
     public byte temperature; // 1 byte
     public float longitude; // 4 bytes
     public float latitude; // 4 bytes
     public long timeframe; // 8 bytes
-
     public void setCID() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter a card id : ");
-        this.cid = sc.nextLong();
+        this.cid = nextCid;
+        nextCid += 1;
     }
 
     public CardReader(byte temperature, float longitude, float latitude, long timeframe) {
-        setCID();
         this.temperature = temperature;
         this.longitude = longitude;
         this.latitude = latitude;

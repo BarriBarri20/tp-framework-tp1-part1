@@ -17,7 +17,7 @@ class PacketGenerator {
             long rightLimit = 100000L;
             long timeframe = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
             CardReader cardReaderInfos = new CardReader(temp[0], longitude, latitude, timeframe);
-
+            cardReaderInfos.setCID();
             Packet packet;
             packet = new Packet(cardReaderInfos);
             System.out.println(packet);

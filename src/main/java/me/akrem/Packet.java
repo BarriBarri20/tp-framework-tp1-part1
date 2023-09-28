@@ -52,6 +52,5 @@ public class Packet {
                 ", checksum = " + checksum +
                 ", checksumIsCorrect ? = " + Arrays.toString(this.packetDeserializer(this.packetSerializer())) +
                 '}';
-
     }
 }
